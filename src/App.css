@@ -1,0 +1,282 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* General Page Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+/* Navigation Bar */
+nav {
+  background-color: #333;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav a {
+  color: #beced1;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #1b0066;
+  color: #ffffff;
+}
+
+/* Individual Page Styling */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+main h1 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+main p {
+  font-size: 1.1em;
+  color: #666;
+}
+
+/* Page-specific colors for demonstration (optional) */
+.home-page {
+  background-color: #e8f5e9;
+}
+
+.veg-page {
+  background-color: #ffebee;
+}
+
+.nonVeg-page {
+  background-color: #fff3e0;
+}
+
+.cart-page {
+  background-color: #e3f2fd;
+}
+
+.purchaseHistory-page {
+  background-color: #ede7f6;
+}
+
+.aboutUs-page {
+  background-color: #f3e5f5;
+}
+
+.contactUs-page {
+  background-color: #f9fbe7;
+}
+
+
+
+/* Container styling */
+.cart-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.cart-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Cart item list */
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.cart-items li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-items p {
+  margin: 0;
+  font-size: 1em;
+  color: #333;
+}
+
+/* Buttons */
+.cart-items button,
+.apply-button,
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin-left: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.cart-items button:hover,
+.apply-button:hover,
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Clear Cart button */
+.clear-cart-button {
+  background-color: #ff4c4c;
+  margin-top: 15px;
+}
+
+.clear-cart-button:hover {
+  background-color: #e63939;
+}
+
+/* Input field */
+.coupon-input {
+  width: calc(100% - 90px);
+  padding: 8px;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+/* Coupon section */
+.coupon-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Total and final amount */
+.total-section {
+  text-align: center;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.discount-text {
+  color: #4caf50;
+}
+
+.final-amount {
+  font-weight: bold;
+  color: #333;
+  font-size: 1.4em;
+  margin-top: 10px;
+}
+
+/* PurchaseHistory.css */
+
+.purchase-history {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.purchase-history h2 {
+  text-align: center;
+  color: #4a4a4a;
+  font-size: 24px;
+}
+
+.purchase-history ul {
+  list-style: none;
+  padding: 0;
+}
+
+.purchase-history li {
+  border: 1px solid #e0e0e0;
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.purchase-history h4 {
+  margin: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.purchase-history p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.purchase-history .items {
+  padding-left: 20px;
+}
+
+.purchase-history .items li {
+  color: #666;
+  font-size: 14px;
+}
+
