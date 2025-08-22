@@ -7,6 +7,12 @@ function Veg() {
     const vegProducts = useSelector(state => state.products.Veg);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        if (statuss === '') {
+          dispatch(fetchProducts());
+        }
+      }, [statuss, dispatch]);
+
     const items = vegProducts.map((product, index) => (
         <li key={index}>
             {product.name} - ${product.price.toFixed(2)}
