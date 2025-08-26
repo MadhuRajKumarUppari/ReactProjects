@@ -46,36 +46,51 @@
 // export const { addToCart } = cartSlice.actions;
 
 
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import axios from "axios";
 
-// Product slice
+export const fetchProducts = createAsyncThunk(
+  'products/fetchProducts',
+  async () => {
+      try {
+          const response = await axios.get(`http://localhost:8989/api/v1/getproducts`); 
+          const products = response.data;
+
+          // Filtering the items based on thier category
+          const veg = products.filter(item => item.category === 'veg');
+          const nonVeg = products.filter(item => item.category === 'nonveg');
+          return { veg, nonVeg };
+      } catch (error) {
+          throw Error("Failed to fetch products");
+      }
+  }
+);
+
 const productsSlice = createSlice({
   name: 'products',
   initialState: {
-    Veg: [
-      { name: 'Tomato', price: 80.12 },
-      { name: 'Potato', price: 30.25 },
-      { name: 'Carrot', price: 55.25 },
-      { name: 'LadiesFinger', price: 35.25 },
-      { name: 'Brinjal', price: 40.25 },
-    ],
-    NonVeg: [
-      { name: 'Chicken', price: 250.45 },
-      { name: 'Mutton', price: 800.23 },
-      { name: 'Fish', price: 400.23 },
-      { name: 'Mutton Pickle', price: 600.23 },
-      { name: 'Egg', price: 6.23 },
-    ],
-    Snacks: [
-      { name: 'Lays', price: 20 },
-      { name: 'Kurkure', price: 10 },
-      { name: 'Bingo', price: 30 },
-      { name: 'Biscuits', price: 25 },
-    ]
+      veg: [],
+      nonVeg: [],
+      status: '',
+      error: null
   },
-  reducers: {}
+  reducers: {},
+  extraReducers: (builder) => {
+      builder
+          .addCase(fetchProducts.pending, (state) => {
+              state.status = 'loading';
+          })
+          .addCase(fetchProducts.fulfilled, (state, action) => {
+              state.status = 'succeeded';
+              state.veg = action.payload.veg || [];
+              state.nonVeg = action.payload.nonVeg || [];
+          })
+          .addCase(fetchProducts.rejected, (state, action) => {
+              state.status = 'failed';
+              state.error = action.error.message;
+          });
+  },
 });
-
 // Cart slice
 const cartSlice = createSlice({
   name: 'cart',

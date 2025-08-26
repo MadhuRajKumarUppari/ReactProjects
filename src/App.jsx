@@ -15,7 +15,7 @@ import { BiSolidPurchaseTag } from "react-icons/bi";
 import { FcAbout } from "react-icons/fc";
 import { MdContactMail } from "react-icons/md";
 import { TiArrowMaximiseOutline } from "react-icons/ti";
-import GoogleLoginComponent from "./GoogleLohinComponent";
+import GoogleLohinComponent from "./GoogleLohinComponent";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import FacebookLoginComponent from "./FacebookLoginComponent";
 import ReactFacebookLogin from "react-facebook-login";
@@ -32,7 +32,7 @@ function App()
     <>
     {/* <ReactFacebookLogin appId="811556444338098" /> */}
   <GoogleOAuthProvider clientId="145843774954-iu4e0q7p9vto3v7ehnt7p6pm7gq6abus.apps.googleusercontent.com" >
-  <GoogleLoginComponent />
+  <GoogleLohinComponent />
   </GoogleOAuthProvider>
   <GitHubLoginComponent />
     <FacebookLoginComponent />
@@ -67,4 +67,6 @@ function App()
     </>
   )
 }
+
+
 export default App;

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { GoogleLogin } from '@react-oauth/google';
 
-function GoogleLoginComponent() {
+function GoogleLohinComponent() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
@@ -17,7 +17,7 @@ function GoogleLoginComponent() {
 
   const decodeJwt = (token) => {
     const base64Url = token.split('.')[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const base64 = base64Url.replace(/_/g, '+').replace(/_/g, '/');
     return JSON.parse(window.atob(base64));
   };
 
@@ -34,4 +34,5 @@ function GoogleLoginComponent() {
   );
 }
 
-export default GoogleLoginComponent;
+export default GoogleLohinComponent;
+
